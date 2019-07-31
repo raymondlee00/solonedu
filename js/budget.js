@@ -2,20 +2,6 @@ abi = [
   {
     "constant": true,
     "inputs": [],
-    "name": "creator",
-    "outputs": [
-      {
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [],
     "name": "name",
     "outputs": [
       {
@@ -28,12 +14,140 @@ abi = [
     "type": "function"
   },
   {
-    "constant": true,
-    "inputs": [],
-    "name": "candidatesCount",
+    "constant": false,
+    "inputs": [
+      {
+        "name": "spender",
+        "type": "address"
+      },
+      {
+        "name": "value",
+        "type": "uint256"
+      }
+    ],
+    "name": "approve",
     "outputs": [
       {
         "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "creation",
+    "outputs": [
+      {
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "totalSupply",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "sender",
+        "type": "address"
+      },
+      {
+        "name": "recipient",
+        "type": "address"
+      },
+      {
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "transferFrom",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "deadline",
+    "outputs": [
+      {
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "spender",
+        "type": "address"
+      },
+      {
+        "name": "addedValue",
+        "type": "uint256"
+      }
+    ],
+    "name": "increaseAllowance",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "options",
+    "outputs": [
+      {
+        "name": "id",
+        "type": "uint256"
+      },
+      {
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "name": "vote_count",
         "type": "uint256"
       }
     ],
@@ -45,22 +159,14 @@ abi = [
     "constant": true,
     "inputs": [
       {
-        "name": "",
-        "type": "uint256"
+        "name": "account",
+        "type": "address"
       }
     ],
-    "name": "candidates",
+    "name": "balanceOf",
     "outputs": [
       {
-        "name": "id",
-        "type": "uint256"
-      },
-      {
-        "name": "name",
-        "type": "string"
-      },
-      {
-        "name": "voteCount",
+        "name": "",
         "type": "uint256"
       }
     ],
@@ -71,11 +177,11 @@ abi = [
   {
     "constant": true,
     "inputs": [],
-    "name": "counter",
+    "name": "description",
     "outputs": [
       {
         "name": "",
-        "type": "uint256"
+        "type": "string"
       }
     ],
     "payable": false,
@@ -102,14 +208,141 @@ abi = [
     "type": "function"
   },
   {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "spender",
+        "type": "address"
+      },
+      {
+        "name": "subtractedValue",
+        "type": "uint256"
+      }
+    ],
+    "name": "decreaseAllowance",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "recipient",
+        "type": "address"
+      },
+      {
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "transfer",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "amount",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "withdrawer",
+    "outputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "owner",
+        "type": "address"
+      },
+      {
+        "name": "spender",
+        "type": "address"
+      }
+    ],
+    "name": "allowance",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "option_count",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [
       {
         "name": "_name",
         "type": "string"
       },
       {
-        "name": "_daysAfter",
+        "name": "_amount",
         "type": "uint256"
+      },
+      {
+        "name": "_description",
+        "type": "string"
+      },
+      {
+        "name": "_creation",
+        "type": "string"
+      },
+      {
+        "name": "_deadline",
+        "type": "string"
+      },
+      {
+        "name": "_withdrawer",
+        "type": "address"
       }
     ],
     "payable": false,
@@ -121,7 +354,7 @@ abi = [
     "inputs": [
       {
         "indexed": true,
-        "name": "_candidateId",
+        "name": "_option_id",
         "type": "uint256"
       }
     ],
@@ -129,10 +362,54 @@ abi = [
     "type": "event"
   },
   {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "from",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "value",
+        "type": "uint256"
+      }
+    ],
+    "name": "Transfer",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "owner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "name": "spender",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "value",
+        "type": "uint256"
+      }
+    ],
+    "name": "Approval",
+    "type": "event"
+  },
+  {
     "constant": false,
     "inputs": [
       {
-        "name": "_candidateId",
+        "name": "_option_id",
         "type": "uint256"
       }
     ],
@@ -144,25 +421,30 @@ abi = [
   },
   {
     "constant": false,
-    "inputs": [],
-    "name": "countdown",
+    "inputs": [
+      {
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "withdraw",
     "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",
     "type": "function"
   },
   {
-    "constant": false,
+    "constant": true,
     "inputs": [],
-    "name": "winner",
+    "name": "getBalance",
     "outputs": [
       {
-        "name": "winner",
-        "type": "string"
+        "name": "",
+        "type": "uint256"
       }
     ],
     "payable": false,
-    "stateMutability": "nonpayable",
+    "stateMutability": "view",
     "type": "function"
   }
 ];
@@ -210,7 +492,7 @@ App = {
         $("#accountAddress").html("Your Account: " + account);
       }
     });
-    $.getJSON("BudgetCreator.json", function (budget) {
+    $.getJSON("/js/BudgetCreator.json", function (budget) {
       // Instantiate a new truffle contract from the artifact
       App.contracts.BudgetCreator = TruffleContract(budget);
       // Connect provider to interact with contract
@@ -223,16 +505,58 @@ App = {
   },
 
   create_contract: function () {
+    var budget_creator;
+    var budget_address;
+    var acc; // account to transfer the $bread$ to
+    var amount; //amount of $$$ to transfer to acc
     $("#button-click").on("click", function () {
       App.contracts.BudgetCreator.deployed().then(function (instance) {
-        instance.add_contract(/*document.getElementById('proposal_name').value, document.getElementById('proposal_description').value, new Date().toString(), document.getElementById('deadline').value*/);
+        console.log('hey0');
+        amount = Number(document.querySelector('#budget_amount').value)
+        web3.eth.getCoinbase(function (err, account) { //turn off privacy mode for this to work with MetaMask
+          if (err) throw err
+          acc = account;
+        });
+        instance.add_contract(document.getElementById('budget_name').value, amount, document.getElementById('budget_description').value, new Date().toString(), document.getElementById('deadline').value, Number(acc));
+        console.log(amount);
+        budget_creator = instance;
+        console.log('hey2');
+        return budget_creator.contract_count();
         // App.listenForNewContract();
+      })
+      .then(function(index) {
+        console.log('hey3');
+        return budget_creator.budgets(index);
+      })
+      .then(function(address) {
+        console.log('hey4');
+        budget_address = document.querySelector('#receiver_address').value;
+        web3.eth.sendTransaction({
+          to: budget_address,
+          from: App.address,
+          value: web3.toWei(`${amount}`, "ether")
+        }, function(err, transactionHash) {
+          if(err) throw err;
+          console.log(transactionHash);
+        });
+        //var budgetInstance = web3.eth.contract(abi).at(address);
+        console.log('hey5');
       });
-    });
-    //return App.get_data();
+      // .then(function(budgetContract) {
+      //   console.log('hey6');
+      //   if(budgetContract.getBalance() < amount) {
+      //     alert('not enuf bred');
+      //     console.log(budgetContract.getBalance());
+      //   }
+      //   budgetContract.withdraw(amount);
+      // });
+     });
+    console.log('hey');
+    return App.get_data();
   },
 
   get_data: function () {
+    console.log('gottem');
     var budget_creator;
     var budget_address;
     App.contracts.BudgetCreator.deployed().then(function (instance) {
@@ -251,8 +575,8 @@ App = {
             else { console.log(error); }
           });
           contract.description(function (error, result) {
-            if (!error) { data.push(result); }
-            else { console.log(error); }
+             if (!error) { data.push(result); }
+             else { console.log(error); }
           });
           data.push(budget_address);
           contract.creation(function (error, result) {
@@ -384,7 +708,7 @@ App = {
         console.log("event triggered", event)
         $("#newbudget").modal('hide');
       });
-      console.log(creator.last_sender.balance);
+      //console.log(creator.last_sender.balance);
     });
   },
 
@@ -410,9 +734,9 @@ App = {
   countdown: function (proposal_creation, deadline, id) {
     var timer = $(".timer" + id.toString());
     var end = new Date();
-    end.setDate(proposal_creation.getDate() + Number(deadline));
+    end.setDate(proposal_creation.getDate() /*+ Number(deadline)*/);
     end.setHours(proposal_creation.getHours());
-    end.setMinutes(proposal_creation.getMinutes());
+    end.setMinutes(proposal_creation.getMinutes() + Number(deadline));
     end.setSeconds(proposal_creation.getSeconds());
     var x = setInterval(function () {
       timer.empty();
